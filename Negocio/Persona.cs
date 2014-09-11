@@ -1,6 +1,7 @@
 ﻿using Datos;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,6 +55,40 @@ namespace Negocio
                         persona.ciudad);
 
 
+        }
+        //metodo para eliminar un registro de la base de datos
+
+        public int eliminarRegistro(int cedula) {
+            DatosSistema datos = new DatosSistema();
+            string[] parametros = { "@operacion", "@cedula" };
+            return datos.Ejecutar("spPersonaSE", parametros, "E", cedula);
+
+        }
+
+        //mostrar registro 
+        public DataTable mostrarRegistro() {
+            DatosSistema datos = new DatosSistema();
+            string[] parametros = { "@operacion","@cedula"};
+            return datos.getDatos("spPersonaSE", parametros, "t", 0);
+        }
+        //consultar registros
+        public Persona getPersona(Persona per) {
+            DataTable dt = new DataTable();
+            DatosSistema datos = new DatosSistema();
+            string[] parametros = { "@operacion","@cedula"};
+            dt = datos.getDatos("spPersonaSE",parametros,"S",0);
+            Persona p = new Persona();
+            foreach (DataRow fila in dt.Rows)
+            { 
+                p.cedula=fila["cedula"].ToString();
+                p.nombre=fila["nombre"].ToString();
+                p.apellido=fila["apellido"].ToString();
+                p.fechaNacimiento=Convert.ToDateTime(fila["fechaNacimiento"].ToString());
+                p.edad=Convert.ToInt32(fila["edad"].ToString());
+                p.ciudad=fila["ciudad"].ToString();
+            }
+            return dt;
+        
         }
     }
 }
