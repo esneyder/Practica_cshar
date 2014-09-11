@@ -10,65 +10,59 @@ namespace Datos
 {
     public class DatosSistema
     {
-        public DataTable getDatos(string procedimiento, string[] parametros, params object[] valparametros)
+        public DataTable getDatos(string procedimiento,
+         string[] nomparametros, params Object[] valparametros)
         {
-            DataTable dt = new DataTable();//creo una nueva tabla
-            Conexion con = new Conexion();//instancio la conexión
+            DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand();
+            Conexion con = new Conexion();
             cmd.Connection = con.conectar();
             cmd.CommandText = procedimiento;
             cmd.CommandType = CommandType.StoredProcedure;
-            if (procedimiento.Length != 0 && parametros.Length == valparametros.Length)
+            if (nomparametros.Length != 0 && nomparametros.Length == valparametros.Length)
             {
                 int i = 0;
-                foreach (string parametro in parametros)
+                foreach (string parametro in nomparametros)
                     cmd.Parameters.AddWithValue(parametro, valparametros[i++]);
-                try
-                {
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    dt.Load(dr);
-                    con.desconectar();
-                    return dt;
-                }
-                catch (Exception)
-                {
-                    con.desconectar();
-                    return dt;
-
-                }
-
             }
+            try
+            {
+                SqlDataReader dr = cmd.ExecuteReader();
+                dt.Load(dr);
+                return dt;
+            }
+            catch (Exception)
+            { }
             return dt;
 
 
         }
 
-    //método ejecutar sentencias
-
-        public int Ejecutar(string procedimiento, String[] parametros, params Object[] valparametros)
+        public int Ejecutar(string procedimiento,
+           string[] nomparametros, params Object[] valparametros)
         {
-            Conexion con = new Conexion();
+            DataTable dt = new DataTable();
             SqlCommand cmd = new SqlCommand();
+            Conexion con = new Conexion();
+            cmd.Connection = con.conectar();
             cmd.CommandText = procedimiento;
             cmd.CommandType = CommandType.StoredProcedure;
-            if (procedimiento!=null && parametros.Length==valparametros.Length)
+            if (nomparametros.Length != 0 && nomparametros.Length == valparametros.Length)
             {
                 int i = 0;
-                foreach (string parametro in parametros)
+                foreach (string parametro in nomparametros)
                     cmd.Parameters.AddWithValue(parametro, valparametros[i++]);
-                try
-                {
-                    return cmd.ExecuteNonQuery();
-                }
-                catch (Exception)
-                {
-                    
-                    throw;
-                }
             }
+            try
+            {
+                return cmd.ExecuteNonQuery();
+            }
+            catch (Exception)
+            { }
             return 0;
+
+
         }
-    
     }
 
     

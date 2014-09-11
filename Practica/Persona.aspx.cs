@@ -27,7 +27,7 @@ namespace Practica
             p.fechaNacimiento =Convert.ToDateTime( txtfechanacimiento.Text);
             p.edad =Convert.ToInt32(txtedad.Text);
             p.ciudad = txtciudad.Text;
-            if (p.nuevaPersona(p) >= 0)
+            if (p.nuevaPersona(p)>0)
             {
                 msg.Text = "Registro guardado..";
             }

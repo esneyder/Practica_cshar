@@ -13,7 +13,7 @@ namespace Datos
         public SqlConnection con { get; set; }
 
         private string cadenaconexion() {
-            return @"Data source=.,initial catalog=bd,user id=esneyder,password=alvarez123";
+            return @"data source=localhost;initial catalog=bd;user id=esneyder;password=alvarez123";
         }
 
 
@@ -26,8 +26,8 @@ namespace Datos
             }
             catch (Exception)
             { 
-            }
             return null;
+            }
         }
 
         //desconectar
