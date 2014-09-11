@@ -15,7 +15,7 @@ namespace Negocio
         public DateTime fechaNacimiento { get; set; }
         public int edad { get; set; }
         public string ciudad { get; set; }
-
+        //método para insertar en la base de datos
         public int nuevaPersona(Persona persona)
         {
             DatosSistema datos = new DatosSistema();
@@ -32,6 +32,27 @@ namespace Negocio
                                 persona.fechaNacimiento,
                                 persona.edad,
                                 persona.ciudad);
+
+        }
+
+        //método para actulizar en la base de datos
+        public int actualizar(Persona persona)
+        {
+            DatosSistema datos = new DatosSistema();
+            string[] paramentros = {"@operacion",
+                                       "@cedula",
+                                       "@nombre",
+                                       "@apellido",
+                                       "@fechaNacimiento",
+                                       "@edad",
+                                       " @ciudad" };
+            return datos.Ejecutar("spPersonaIA",
+                        paramentros, "A", persona.cedula,
+                        persona.nombre,
+                        persona.apellido,
+                        persona.fechaNacimiento,
+                        persona.ciudad);
+
 
         }
     }
