@@ -1,0 +1,7 @@
+D:\TdeA\Practica\Negocio\bin\Debug\Negocio.dll
+D:\TdeA\Practica\Negocio\bin\Debug\Negocio.pdb
+D:\TdeA\Practica\Negocio\bin\Debug\Datos.dll
+D:\TdeA\Practica\Negocio\bin\Debug\Datos.pdb
+D:\TdeA\Practica\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+D:\TdeA\Practica\Negocio\obj\Debug\Negocio.dll
+D:\TdeA\Practica\Negocio\obj\Debug\Negocio.pdb

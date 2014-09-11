@@ -1,0 +1,5 @@
+D:\TdeA\Practica\Datos\bin\Debug\Datos.dll
+D:\TdeA\Practica\Datos\bin\Debug\Datos.pdb
+D:\TdeA\Practica\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+D:\TdeA\Practica\Datos\obj\Debug\Datos.dll
+D:\TdeA\Practica\Datos\obj\Debug\Datos.pdb

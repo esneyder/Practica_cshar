@@ -3,44 +3,53 @@
 
     <br />
     <br />
+
+    <asp:Label ID="msg" runat="server" Text=""></asp:Label>
     <table class="nav-justified">
         <tr>
             <td style="width: 170px">Cedula *</td>
             <td>
-                <asp:TextBox ID="TextBox1" runat="server" Width="209px"></asp:TextBox>
+                <asp:TextBox ID="txtcedula" runat="server" Width="209px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td style="width: 170px">Nombre *</td>
             <td>
-                <asp:TextBox ID="TextBox2" runat="server" Width="208px"></asp:TextBox>
+                <asp:TextBox ID="txtnombre" runat="server" Width="208px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td style="width: 170px">Apellido *</td>
             <td>
-                <asp:TextBox ID="TextBox3" runat="server" Width="207px"></asp:TextBox>
+                <asp:TextBox ID="txtapellido" runat="server" Width="207px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td style="width: 170px">Fecha Nacimiento *</td>
             <td>
-                <asp:TextBox ID="TextBox4" runat="server" TextMode="Date" Width="204px"></asp:TextBox>
+                <asp:TextBox ID="txtfechanacimiento" runat="server" TextMode="Date" Width="205px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td style="width: 170px">Edad *</td>
             <td>
-                <asp:TextBox ID="TextBox5" runat="server" Width="201px"></asp:TextBox>
+                <asp:TextBox ID="txtedad" runat="server" Width="206px"></asp:TextBox>
             </td>
         </tr>
         <tr>
             <td style="width: 170px">Ciudad *</td>
             <td>
-                <asp:TextBox ID="TextBox6" runat="server" Width="189px"></asp:TextBox>
+                <asp:TextBox ID="txtciudad" runat="server" Width="204px"></asp:TextBox>
             </td>
         </tr>
     </table>
+    <br />
 
+    <asp:Button ID="Button1" runat="server" Text="Registrar" OnClick="Button1_Click" />
+    <asp:Button ID="Button3" runat="server" Text="Consultar" />
+    <asp:Button ID="Button2" runat="server" Text="Actualizar" />
+    <asp:Button ID="Button4" runat="server" Text="Eliminar" />
 
+    <br />
+    <asp:GridView ID="dgPersona" runat="server"></asp:GridView>
 </asp:Content>
