@@ -87,7 +87,7 @@ namespace Negocio
                 p.edad=Convert.ToInt32(fila["edad"].ToString());
                 p.ciudad=fila["ciudad"].ToString();
             }
-            return dt;
+            return p;
         
         }
     }
