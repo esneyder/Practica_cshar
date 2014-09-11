@@ -1,3 +1,4 @@
+/*Proyecto para desarrollar habilidades en temas de desarrollo de softwar con tecnólogia microsoft*/
 create database bd
 use bd
 
